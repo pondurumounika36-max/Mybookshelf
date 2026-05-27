@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npx prisma *)",
+      "Bash(git config *)",
+      "Bash(echo \"user.name: $\\(git config user.name\\)\")",
+      "Bash(echo \"user.email: $\\(git config user.email\\)\")",
+      "Bash(git commit *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "PowerShell(Resolve-DnsName *)",
+      "Bash(curl -s -o /dev/null -w \"health: %{http_code}\\\\n\" https://mybookshelf-okln.onrender.com/health)",
+      "Bash(curl -s -o /dev/null -w \"books: %{http_code}\\\\n\" https://mybookshelf-okln.onrender.com/api/books)",
+      "Bash(git check-ignore *)",
+      "Bash(git add *)"
+    ]
+  }
+}

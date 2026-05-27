@@ -1,0 +1,25 @@
+// Prisma schema for MyBookShelf.
+// This file defines the database structure. Run `npx prisma migrate dev`
+// after editing to apply changes to your Postgres database.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Book {
+  id        Int      @id @default(autoincrement())
+  title     String   @db.VarChar(200)
+  author    String   @db.VarChar(100)
+  genre     String?  @db.VarChar(50)
+  rating    Int?
+  status    String   @default("want-to-read") @db.VarChar(20)
+  metadata  Json     @default("{}")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("books")
+}

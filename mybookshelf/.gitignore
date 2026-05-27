@@ -1,0 +1,40 @@
+# Root-level .gitignore for the MyBookShelf monorepo.
+# The client/ and server/ subdirectories also have their own .gitignore files;
+# this top-level one is a safety net that catches things regardless of cwd.
+
+# Dependencies (in case anything escapes the subdir .gitignores)
+node_modules/
+
+# Environment files — NEVER commit these. They hold database passwords,
+# API keys, and other secrets. Use .env.example for templates instead.
+.env
+.env.local
+.env.*.local
+*.env
+
+# Build artifacts
+dist/
+build/
+.next/
+.cache/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*~
+
+# OneDrive / Windows sync junk
+desktop.ini
+
+# Prisma local artifacts (keep schema.prisma; ignore generated DB files)
+*.db
+*.db-journal
